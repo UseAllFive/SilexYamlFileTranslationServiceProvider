@@ -1,0 +1,16 @@
+{
+    "autoload": {
+        "psr-0": {
+            "UseAllFive\\": "src"
+        }
+    },
+    "name": "useallfive/silex-yaml-file-translation-service-provider",
+    "description": "A Yaml file based TranslationServiceProvider.",
+    "license": "MIT",
+    "require": {
+        "silex/silex": "~1.1",
+        "symfony/config": "~2.3",
+        "symfony/finder": "~2.3",
+        "symfony/yaml": "~2.3"
+    }
+}
