@@ -25,11 +25,15 @@ class YamlFileTranslationServiceProvider extends SilexTranslationServiceProvider
 
             $translator->addLoader('yaml', new YamlFileLoader());
             foreach ($finder as $file) {
-                $lang = $file->getBaseName('.' . $file->getExtension());
+                $baseName = $file->getBaseName('.' . $file->getExtension());
+                $nameParts = explode("-", $baseName);
+                $lang = $nameParts[0];
+                $domain = (isset($nameParts[1])) ? $nameParts[1] : null;
                 $translator->addResource(
                     'yaml',
                     $file->getRealpath(),
-                    $lang
+                    $lang,
+                    $domain
                 );
             }
 
